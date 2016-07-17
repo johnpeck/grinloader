@@ -1,0 +1,18 @@
+# Udev rules for xmega
+
+# Use the command
+# udevadm info --attribute-walk --name=/dev/ttyACM0
+# to figure out which ATTRS to match.  You should cut and paste from that output.
+#
+# Use
+# udevadm monitor
+# to figure out the device node to query in the command above.  You can also use lsusb -v.
+#
+# When you're done, use
+# sudo udevadm control --reload-rules
+# ...to reload the rules
+# 
+ATTRS{product}=="CDC Virtual Com", SYMLINK+="xmega", GROUP="plugdev"
+
+# The stock bootloader shows up as idVendor 0x03eb, idProduct 0x2fe2
+ATTR{idVendor}=="03eb", ATTRS{idProduct}=="2fe2", MODE="660", GROUP="plugdev"
