@@ -11,7 +11,12 @@
 # When you're done, use
 # sudo udevadm control --reload-rules
 # ...to reload the rules
-# 
+#
+
+# Support the AVR Dragon
+ATTR{idVendor}=="03eb", ATTRS{idProduct}=="2107", MODE="660", GROUP="plugdev"
+
+# Support the CDC virtual COM port provided by the demo application
 ATTRS{product}=="CDC Virtual Com", SYMLINK+="xmega", GROUP="plugdev"
 
 # The stock bootloader shows up as idVendor 0x03eb, idProduct 0x2fe2
