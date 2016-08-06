@@ -22,5 +22,6 @@ ATTRS{product}=="CDC Virtual Com", SYMLINK+="xmega", GROUP="plugdev"
 # The stock bootloader shows up as idVendor 0x03eb, idProduct 0x2fe2
 ATTR{idVendor}=="03eb", ATTRS{idProduct}=="2fe2", MODE="660", GROUP="plugdev"
 
-# The LUFA demo application
+# The LUFA demo applications
 ATTRS{product}=="LUFA CDC Demo", MODE="660", GROUP="plugdev"
+ATTRS{product}=="LUFA Dual CDC Demo", MODE="660", GROUP="plugdev"
